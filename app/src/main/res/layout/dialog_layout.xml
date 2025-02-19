@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText" >
+
+    <!-- Палитра -->
+    <LinearLayout
+        android:id="@+id/lineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.tera.colorselectdialog.SquareView
+            android:id="@+id/square"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.tera.colorselectdialog.ToneView
+            android:id="@+id/tone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+
+        <com.tera.colorselectdialog.AlphaView
+            android:id="@+id/alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+
+    </LinearLayout>
+
+    <!-- Линия TextView -->
+    <LinearLayout
+        android:layout_width="319dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="TextSizeCheck">
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+
+        <!-- Alpha -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_line"
+                android:text="A%"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvAlpha"
+                style="@style/text_line.val"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="30dp" />
+
+        <!-- Red -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_line"
+                android:layout_height="wrap_content"
+                android:text="R"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvRed"
+                style="@style/text_line.val"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="30dp" />
+
+        <!-- Green -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_line"
+                android:text="G"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvGreen"
+                style="@style/text_line.val"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="30dp" />
+
+        <!-- Blue -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_line"
+                android:layout_height="wrap_content"
+                android:text="B"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvBlue"
+                style="@style/text_line.val"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="30dp" />
+
+        <!-- Hex -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_line"
+                android:text="Hex"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvHex"
+                style="@style/text_line.val"
+                android:text="#FF00FF00"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Цветные поля -->
+    <LinearLayout
+        android:id="@+id/LineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="66dp"
+            android:layout_height="30dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_cells_12" />
+
+            <View
+                android:id="@+id/viewOld"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F4A2A2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/ic_arrow_right" />
+
+        <FrameLayout
+            android:layout_width="66dp"
+            android:layout_height="30dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_cells_12" />
+
+            <View
+                android:id="@+id/viewNew"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#9B9BF4" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Кнопки -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:visibility="visible"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bnCansel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="@android:string/cancel"
+            android:textAllCaps="false"
+            app:cornerRadius="5dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bnOk"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"
+            android:textAllCaps="false"
+            app:cornerRadius="5dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

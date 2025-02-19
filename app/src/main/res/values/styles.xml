@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="view_color">#8F334DE0</color>
+
+    <dimen name="line_hor_width">260dp</dimen>
+    <dimen name="line_hor_height">32dp</dimen>
+    <dimen name="text_width">100dp</dimen>
+
+    <style name="line_hor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/line_hor_height</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="line_hor.argb">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text">
+        <item name="android:layout_width">@dimen/text_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="text.value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="text.rgb">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/rectangle_gray</item>
+    </style>
+
+    <!-- Цветные view -->
+    <style name="frame_color">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="view_color">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/view_color</item>
+    </style>
+
+    <style name="view_color.bottom">
+        <item name="android:background">@drawable/ic_cells_16</item>
+    </style>
+
+    <style name="view_color.top">
+        <item name="android:background">@drawable/rectangle</item>
+    </style>
+
+</resources>

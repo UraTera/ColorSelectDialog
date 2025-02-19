@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
+
+    <View
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@id/lineColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bnOpen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/line_hor"
+                android:background="@drawable/rectangle_gray">
+
+                <TextView
+                    style="@style/text"
+                    android:text="@string/color" />
+
+                <TextView
+                    android:id="@+id/tvColor"
+                    style="@style/text.value"
+                    android:text="00" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_hor_height"
+                android:layout_marginBottom="10dp">
+
+                <View style="@style/view_color.bottom" />
+
+                <View
+                    android:id="@+id/vColor"
+                    style="@style/view_color" />
+
+                <View style="@style/view_color.top" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="TextSizeCheck">
+
+                <!-- Alpha -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_line"
+                        android:text="A%"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/tvAlpha"
+                        style="@style/text_line.val"
+                        android:text="000" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="30dp" />
+
+                <!-- Red -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_line"
+                        android:layout_height="wrap_content"
+                        android:text="R"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/tvRed"
+                        style="@style/text_line.val"
+                        android:text="000" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="30dp" />
+
+                <!-- Green -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_line"
+                        android:text="G"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/tvGreen"
+                        style="@style/text_line.val"
+                        android:text="000" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="30dp" />
+
+                <!-- Blue -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_line"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/tvBlue"
+                        style="@style/text_line.val"
+                        android:text="000" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="30dp" />
+
+                <!-- Hex -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_line"
+                        android:text="Hex"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/tvHex"
+                        style="@style/text_line.val"
+                        android:text="#FF00FF00"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_hor">
+
+                <FrameLayout style="@style/frame_color">
+
+                    <View
+                        android:id="@+id/vRed"
+                        style="@style/view_color" />
+
+                    <View style="@style/view_color.top" />
+                </FrameLayout>
+
+                <FrameLayout style="@style/frame_color">
+
+                    <View
+                        android:id="@+id/vGreen"
+                        style="@style/view_color" />
+
+                    <View style="@style/view_color.top" />
+                </FrameLayout>
+
+                <FrameLayout style="@style/frame_color">
+
+                    <View
+                        android:id="@+id/vBlue"
+                        style="@style/view_color" />
+
+                    <View style="@style/view_color.top" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slAlpha"
+            style="@style/Widget.Material3.Slider.Legacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:value="100"
+            android:valueTo="255"
+            app:labelBehavior="gone"
+            app:thumbColor="@color/gray"
+            app:thumbRadius="14dp"
+            app:thumbStrokeWidth="1dp"
+            app:trackColorActive="@color/gray_200"
+            app:trackHeight="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slRed"
+            style="@style/Widget.Material3.Slider.Legacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:value="100"
+            android:valueTo="255"
+            app:labelBehavior="gone"
+            app:thumbColor="@color/red"
+            app:thumbRadius="14dp"
+            app:thumbStrokeWidth="1dp"
+            app:trackColorActive="@color/red_200"
+            app:trackHeight="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slGreen"
+            style="@style/Widget.Material3.Slider.Legacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:value="100"
+            android:valueTo="255"
+            app:labelBehavior="gone"
+            app:thumbColor="@color/green"
+            app:thumbRadius="14dp"
+            app:thumbStrokeWidth="1dp"
+            app:trackColorActive="@color/green_200"
+            app:trackHeight="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slBlue"
+            style="@style/Widget.Material3.Slider.Legacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:value="100"
+            android:valueTo="255"
+            app:labelBehavior="gone"
+            app:thumbColor="@color/blue"
+            app:thumbRadius="14dp"
+            app:thumbStrokeWidth="1dp"
+            app:trackColorActive="@color/blue_200"
+            app:trackHeight="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bnOpen"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/select_color"
+        android:textAllCaps="false"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
