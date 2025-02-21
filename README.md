@@ -34,8 +34,8 @@ private fun openDialog() {
     val dialog = PaletteDialog(this, myColor)
     dialog.buttonOkColor = -2490390
     dialog.textOkColor = -16546298
-    dialog.buttonCanselColor = -6426
-    dialog.textCanselColor = -3012857
+    dialog.buttonCancelColor = -6426
+    dialog.textCancelColor = -3012857
     dialog.setOnClickListener {
         myColor = it
     }
