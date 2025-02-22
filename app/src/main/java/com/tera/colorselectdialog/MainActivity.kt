@@ -125,8 +125,8 @@ class MainActivity : AppCompatActivity() {
         val dialog = PaletteDialog(this, mColor)
         dialog.buttonOkColor = -2490390
         dialog.textOkColor = -16546298
-        dialog.buttonCanselColor = -6426
-        dialog.textCanselColor = -3012857
+        dialog.buttonCancelColor = -6426
+        dialog.textCancelColor = -3012857
         dialog.setOnClickListener {
             mColor = it
             colorFromDialog()

@@ -38,7 +38,7 @@ class PaletteDialog(context: Context?, color: Int) {
     private var handler = Handler(Looper.getMainLooper())
 
     init {
-        val view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null)
+        val view = LayoutInflater.from(context).inflate(R.layout.dialog_palette_layout, null)
 
         square = view.findViewById(R.id.square)
         tone = view.findViewById(R.id.tone)
@@ -194,13 +194,13 @@ class PaletteDialog(context: Context?, color: Int) {
             bnOk.setTextColor(value)
         }
 
-    var buttonCanselColor: Int = 0
+    var buttonCancelColor: Int = 0
         set(value) {
             field = value
             bnCansel.setBackgroundColor(value)
         }
 
-    var textCanselColor: Int = 0
+    var textCancelColor: Int = 0
         set(value) {
             field = value
             bnCansel.setTextColor(value)
