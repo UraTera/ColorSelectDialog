@@ -13,7 +13,10 @@ Dependencies:
 ```
 implementation(files("libs/PaletteDialog.aar"))
 ```
-
+or
+```
+implementation("io.github.uratera:palette_dialog:1.0.0")
+```
 Usage
 
 Kotlin
