@@ -12,7 +12,7 @@ import com.google.android.material.button.MaterialButton
 
 typealias OnClickListener = (color: Int) -> Unit
 
-class PaletteDialog(context: Context?, color: Int) {
+class PaletteDialog(context: Context, color: Int) {
 
     private var mListener: OnClickListener? = null
     private var mDialog: AlertDialog? = null
@@ -72,11 +72,24 @@ class PaletteDialog(context: Context?, color: Int) {
 
         // Get parameter on open
         handler.postDelayed({
+            setSize(context)
             setParamsStart()
             moveCursorsStart()
             setText()
         }, 100)
     }
+
+    private fun setSize(context: Context) {
+        val screen = context.resources.displayMetrics
+        val wS = screen.widthPixels
+        val hS = screen.heightPixels
+
+        if (wS > hS) { // Landscape
+            if (wS < 2100)
+                mDialog?.window?.setLayout(1400, 980)
+        }
+    }
+
 
     private fun initCursors() {
         square.setOnColorChangeListener { _, color ->

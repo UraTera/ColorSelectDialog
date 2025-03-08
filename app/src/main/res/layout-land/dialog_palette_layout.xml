@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:id="@+id/lineText"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="2dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/linePalette"
+        app:layout_constraintEnd_toStartOf="@+id/linePalette"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linePalette"
+        tools:ignore="TextSizeCheck">
+
+        <!-- Alpha -->
+        <LinearLayout style="@style/line_lan">
+
+            <TextView
+                style="@style/text_line.lan"
+                android:text="A%"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvAlpha"
+                style="@style/text_line.val.lan"
+                android:text="000" />
+
+        </LinearLayout>
+
+        <Space style="@style/space_lan" />
+
+        <!-- Red -->
+        <LinearLayout style="@style/line_lan">
+
+            <TextView
+                style="@style/text_line.lan"
+                android:text="R"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvRed"
+                style="@style/text_line.val.lan"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space style="@style/space_lan" />
+
+        <!-- Green -->
+        <LinearLayout style="@style/line_lan">
+
+            <TextView
+                style="@style/text_line.lan"
+                android:text="G"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvGreen"
+                style="@style/text_line.val.lan"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space style="@style/space_lan" />
+
+        <!-- Blue -->
+        <LinearLayout style="@style/line_lan">
+
+            <TextView
+                style="@style/text_line.lan"
+                android:text="B"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvBlue"
+                style="@style/text_line.val.lan"
+                android:text="000" />
+        </LinearLayout>
+
+        <Space style="@style/space_lan" />
+
+        <!-- Hex -->
+        <LinearLayout style="@style/line_lan">
+
+            <TextView
+                style="@style/text_line.lan"
+                android:text="Hex"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvHex"
+                style="@style/text_line.val.lan"
+                android:text="#FF00FF00"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout style="@style/line_lan">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_cells_12" />
+
+                <View
+                    android:id="@+id/viewOld"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F4A2A2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="2"
+                android:background="@drawable/ic_arrow_right" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_cells_12" />
+
+                <View
+                    android:id="@+id/viewNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#9B9BF4" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linePalette"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lineButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lineText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.tera.colorselectdialog.SquareView
+            android:id="@+id/square"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.tera.colorselectdialog.ToneView
+            android:id="@+id/tone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+
+        <com.tera.colorselectdialog.AlphaView
+            android:id="@+id/alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linePalette">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bnCansel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="@android:string/cancel"
+            android:textAllCaps="false"
+            app:cornerRadius="5dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bnOk"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"
+            android:textAllCaps="false"
+            app:cornerRadius="5dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

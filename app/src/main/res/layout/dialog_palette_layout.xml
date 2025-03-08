@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:ignore="HardcodedText" >
+    tools:ignore="HardcodedText">
 
     <LinearLayout
-        android:id="@+id/lineTop"
+        android:id="@+id/linePalette"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lineText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <com.tera.colorselectdialog.SquareView
             android:id="@+id/square"
@@ -37,17 +41,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="319dp"
+        android:id="@+id/lineText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lineColor"
+        app:layout_constraintEnd_toEndOf="@+id/linePalette"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/linePalette"
+        app:layout_constraintTop_toBottomOf="@+id/linePalette"
         tools:ignore="TextSizeCheck">
-
-        <Space
-            android:layout_width="1dp"
-            android:layout_height="20dp"/>
 
         <!-- Alpha -->
         <LinearLayout
@@ -68,9 +75,7 @@
                 android:text="000" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="4dp"
-            android:layout_height="30dp" />
+        <Space style="@style/space" />
 
         <!-- Red -->
         <LinearLayout
@@ -92,9 +97,7 @@
                 android:text="000" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="4dp"
-            android:layout_height="30dp" />
+        <Space style="@style/space" />
 
         <!-- Green -->
         <LinearLayout
@@ -115,9 +118,7 @@
                 android:text="000" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="4dp"
-            android:layout_height="30dp" />
+        <Space style="@style/space" />
 
         <!-- Blue -->
         <LinearLayout
@@ -139,9 +140,7 @@
                 android:text="000" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="4dp"
-            android:layout_height="30dp" />
+        <Space style="@style/space" />
 
         <!-- Hex -->
         <LinearLayout
@@ -166,12 +165,17 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/LineBottom"
+        android:id="@+id/lineColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lineButton"
+        app:layout_constraintEnd_toEndOf="@+id/linePalette"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/linePalette"
+        app:layout_constraintTop_toBottomOf="@+id/lineText">
 
         <FrameLayout
             android:layout_width="66dp"
@@ -226,12 +230,17 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lineButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:visibility="visible"
+        android:gravity="end"
         android:orientation="horizontal"
-        android:gravity="end">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineColor">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bnCansel"
@@ -254,4 +263,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
